@@ -1,0 +1,21 @@
+---
+const posts = await Astro.glob('./*.md');
+---
+
+<h2>POSTS</h2>
+<section>
+  {
+    posts.map(post => (
+      <p>
+        <a href={post.url}>{post.frontmatter.title}</a>
+        <span>{post.frontmatter.description}</span>
+      </p>
+    ))
+  }
+</section>
+
+<style>
+  span {
+    display: block;
+  }
+</style>

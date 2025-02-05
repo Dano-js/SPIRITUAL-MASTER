@@ -1,0 +1,30 @@
+---
+import Social from './Social.astro';
+---
+
+<footer>
+  <p>Learn more about my work on:</p>
+  <div class="platforms">
+    <Social platform="X" username="pigdog" />
+    <Social platform="Substack" username="pigdog" />
+    <Social platform="Gettr" username="pigdog" />
+  </div>
+</footer>
+
+<style>
+  footer {
+    margin-block: 3rem;
+  }
+  .platforms {
+    display: flex;
+    gap: 1.5rem;
+
+    margin-block-start: 1rem;
+  }
+
+  .platforms a {
+    text-decoration: none;
+    color: #f00;
+    text-transform: uppercase;
+  }
+</style>

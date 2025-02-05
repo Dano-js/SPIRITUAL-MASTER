@@ -1,18 +1,31 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../css/style.css';
 const { pageTitle = 'This is it!' } = Astro.props;
 ---
 
-<body class="base-layout">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="base-layout">
+    <Navigation />
+    <h1>About Me</h1>
+    <h1>{pageTitle}</h1>
+    <h2>... and my new Astro site!</h2>
 
-  <h1>About Me</h1>
-  <h2>... and my new Astro site!</h2>
-  <h1>This isn't about me!</h1>
-  <h2>This is about Him and His works</h2>
+    <p>
+      I am working through Astro's introductory tutorial. This is the second
+      page on my website, and it's the first one I built myself!
+    </p>
 
-  <p>I am only the facilitator.</p>
-  <p>I will add more as He directs me too.</p>
-</body>
+    <p>
+      This site will update as I complete more of the tutorial, so keep checking
+      back and see how my journey is going!
+    </p>
+    <Footer />
+  </body>
+</html>
