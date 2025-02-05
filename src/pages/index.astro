@@ -1,5 +1,6 @@
 ---
-const { pageTitle = 'This is the Shit' } = Astro.props;
+import '../css/style.css';
+const { pageTitle = 'This is the Shit!' } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,7 +11,100 @@ const { pageTitle = 'This is the Shit' } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <h1>Astro</h1>
+  <body class="base-layout">
+    <header>
+      <h1>Astro</h1>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+    </header>
+    <main>
+      <div class="three-columns">
+        <div class="span-2 fa-container flow">
+          <h3>This is it!!</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In vel
+            maxime enim odio quae veritatis quas sint dolor consequuntur dolorem
+            minus culpa deserunt, minima eveniet dignissimos, rerum libero est,
+            aut nemo! Quos sequi placeat temporibus mollitia maxime pariatur
+            magni maiores minima incidunt voluptate qui, consectetur, aspernatur
+            quo saepe totam perspiciatis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In vel
+            maxime enim odio quae veritatis quas sint dolor consequuntur dolorem
+            minus culpa deserunt, minima eveniet dignissimos, rerum libero est,
+            aut nemo! Quos sequi placeat temporibus mollitia maxime pariatur
+            magni maiores minima incidunt voluptate qui, consectetur, aspernatur
+            quo saepe totam perspiciatis.
+          </p>
+        </div>
+        <div class="inverted flow">
+          <h2 class="accent-color">NEW</h2>
+          <ul role="list" class="separated-list">
+            <li>
+              <article class="flow">
+                <h3><a href="#">Article 1</a></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Mollitia nemo soluta?
+                </p>
+              </article>
+            </li>
+            <li>
+              <article class="flow">
+                <h3>Article 2</h3>
+                <p>
+                  Ipsa architecto delectus porro maxime repudiandae sapiente?
+                  Earum dolorem.
+                </p>
+              </article>
+            </li>
+            <li>
+              <article class="flow">
+                <h3>Article 3</h3>
+                <p>
+                  Facilis unde fugiat, pariatur soluta neque aperiam excepturi?
+                  Placeat voluptatibus illo!
+                </p>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="three-columns popular-container">
+        <div>
+          <p>
+            Vitae, velit quos dolores architecto necessitatibus fugit vero, quam
+            laudantium dolor, fuga deserunt mollitia! Itaque aspernatur amet sit
+            reprehenderit atque fugit necessitatibus corporis voluptatum sed
+            rerum autem.
+          </p>
+        </div>
+        <div>
+          <p>
+            Vitae, velit quos dolores architecto necessitatibus fugit vero, quam
+            laudantium dolor, fuga deserunt mollitia! Itaque aspernatur amet sit
+            reprehenderit atque fugit necessitatibus corporis voluptatum sed
+            rerum autem, nihil quas accusantium error numquam explicabo
+            consequuntur. Alias, ullam sunt accusamus aliquam id architecto sed
+            reiciendis non nisi natus labore a, eligendi pariatur.
+          </p>
+        </div>
+        <div>
+          <p>
+            Vitae, velit quos dolores architecto necessitatibus fugit vero, quam
+            laudantium dolor, fuga deserunt mollitia! Itaque aspernatur amet sit
+            reprehenderit atque fugit necessitatibus corporis voluptatum sed
+            rerum autem, nihil quas accusantium error numquam explicabo
+            consequuntur. Alias, ullam sunt accusamus aliquam id architecto sed
+            reiciendis non nisi natus labore a, eligendi pariatur.
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
+
+<style></style>
