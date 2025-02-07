@@ -1,32 +1,32 @@
 ---
+import PrimaryLayout from '../layouts/PrimaryLayout.astro';
 import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import '../css/style.css';
-const { pageTitle = 'This is it!!' } = Astro.props;
-const posts = await Astro.glob('./posts/*.md');
+import BlogList from '../components/BlogList.astro';
+// const posts = await Astro.glob('./posts/*.md');
+const allPosts = Object.values(
+  import.meta.glob('./posts/*.md', { eager: true })
+);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Navigation />
+<PrimaryLayout pageTitle="BLOG!">
+  <h2>My Astro Learning Blog</h2>
+  <p>This is where I will post about my journey learning Astro.</p>
 
-    <h1>My Astro Learning Blog</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-    <section>
-      {
-        posts.map(post => (
-          <p>
-            <a href={post.url}>{post.frontmatter.title}</a>
-            <span>{post.frontmatter.description}</span>
-          </p>
-        ))
-      }
-    </section>
-    <Footer />
-  </body>
-</html>
+  <h2>Posts</h2>
+  <section>
+    {
+      allPosts.map((post: any) => (
+        <p>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </p>
+      ))
+    }
+  </section>
+  <ul>
+    {
+      allPosts.map((post: any) => (
+        <BlogList url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+</PrimaryLayout>
